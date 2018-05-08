@@ -1,0 +1,11 @@
+# tesseract 'fax' experiment
+pdfimages -png FAX_20161011_1476175618_27.pdf extract
+
+convert -density 288 -flip extract-000.png extract-000.resized.png
+convert -density 288 -flip extract-001.png extract-001.resized.png
+
+tesseract -l nld extract-000.resized.png extract-text-000.noresize
+cat extract-text-000.noresize.txt
+
+tesseract -l nld extract-001.resized.png extract-text-001.noresize
+cat extract-text-001.noresize.txt

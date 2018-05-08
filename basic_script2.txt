@@ -1,0 +1,15 @@
+curl http://localhost:9998/tika --upload-file /home/test/dev/fax_light/FAX_20180426_1524742628_533.pdf --header "X-Tika-PDFOcrStrategy: ocr_only"
+
+valid but worse: --header "X-Tika-PDFOcrImageType: binary"
+
+
+pdfimages -f 1 -l 1 -png /home/test/dev/fax_light/FAX_20180426_1524742628_533.pdf fax
+convert -density 288 -auto-orient -monochrome fax-000.png fax-000.converted.png
+
+(including this page)
+
+ 
+
+23226339249
+
+
