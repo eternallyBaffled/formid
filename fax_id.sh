@@ -8,7 +8,9 @@ FAX_FILE="$1"
 # this is going to take a while
 # but at least it should work
 
-curl -sS http://${SERVER}/tika --upload-file "${FAX_FILE}" --header "X-Tika-PDFOcrStrategy: ocr_only"
+curl http://${SERVER}/tika --upload-file "${FAX_FILE}" --header "X-Tika-PDFOcrStrategy: ocr_only" --header "X-Tika-OCRLanguage: nld"
+
+# --header "X-Tika-OCROutputType: hocr"
 
 # TODO
 # grep number from ocr output
